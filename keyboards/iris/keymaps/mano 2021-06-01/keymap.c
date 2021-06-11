@@ -22,9 +22,27 @@ extern keymap_config_t keymap_config;
 
 enum custom_keycodes {
   KC_N000 = SAFE_RANGE,
+  KC_SML0,
+  KC_SML1,
+  KC_LOL,
+  KC_SAD,
+  KC_KISS,
+  KC_LOVE,
+  KC_TNGE,
+  KC_THUP,
+  KC_THDN,
+  KC_RUP,
+  KC_PND,
+  KC_SHRG,
   KC_OSCL,
   KC_AESV,
+  KC_WMOV,
+  KC_WSIZ,
   KC_COLS,
+  KC_SNND,
+
+
+
 };
 
 
@@ -128,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ASER] = KC_KEYMAP(
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
-   DOT,COMM, C  , D  , F  , K  ,               V  , H  , T  , L  , DOT, DOT,
+  NAVT,COMM, C  , D  , F  , K  ,               V  , H  , T  , L  , DOT,NAVT,
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
    DOT, A  , S  , E  , R  , Y  ,              BSPC, N  , I  , O  , ENT, DOT,
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
@@ -158,11 +176,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_NUM] = KC_KEYMAP(
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
-  ____,COMM,PGUP, UP ,PGDN,CIRC,              MINS, 7  , 8  , 9  ,ASTR,____,
+  ____,COMM,STAB, UP , TAB,CIRC,              MINS, 7  , 8  , 9  ,ASTR,____,
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
   ____,N000,LEFT,DOWN,RGHT,QUOT,              BSPC, 4  , 5  , 6  , ENT, ASTR,
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
-  ____,OLGU,OLCT,OLSF,OLAL,PERC,              PLUS, 1  , 2  , 3  ,SLSH,____,
+  ____,OLGU,LPRN, EQL,RPRN,PERC,              PLUS, 1  , 2  , 3  ,SLSH,____,
 //----+----,----+----+----+----+----|   |----|----+----+----+----+----+----,
   ____,____,____,____,LNUO,NAVO,SYMO,    OLAL, 0  , DOT,____,____,____,____,
 //----+----+----+----+----+----+----|   |----+----+----+----+----+----+----,
@@ -186,9 +204,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_SYM] = KC_KEYMAP(
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
-  PIPE, GT ,MINS,DQUO,PLUS,SCLN,               GRV,RBRC,RPRN,RCBR,PIPE,____,
+  ____, GT ,MINS,DQUO,PLUS,SCLN,               GRV,RBRC,RPRN,RCBR,PIPE,____,
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
-  PIPE, LT ,UNDS,QUOT, EQL,COLN,              BSPC,LBRC,LPRN,LCBR,AMPR,PIPE,
+   GT , LT ,UNDS,QUOT, EQL,COLN,              BSPC,LBRC,LPRN,LCBR,AMPR,PIPE,
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
   ____,EXLM,ASTR, AT ,SLSH,QUES,              TILD, DLR,HASH,BSLS,PERC,____,
 //----+----,----+----+----+----+----|   |----|----+----+----+----+----+----,
@@ -202,11 +220,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_EXT] = KC_KEYMAP(
 //----+----+----+----+----+----|             |----+----+----+----+----+----,
-  ____,RSET,SLCK,VOLU,NLCK,WAKE,              XXXX,XXXX,XXXX,XXXX,XXXX,____,
+  ____,RSET,SLCK,VOLU,NLCK,WAKE,              LOVE,THUP,THDN,TNGE,XXXX,____,
 //----+----+----+----+----+----|             |----+----+----+----,----+----,
-  ____,WFAV,MPRV,VOLD,MNXT,PSCR,              XXXX,XXXX,XXXX,XXXX,XXXX,XXXX,
+  ____,WFAV,MPRV,VOLD,MNXT,PSCR,               SAD,SML0,SML1, LOL,XXXX,XXXX,
 //----+----+----+----+----+----|             |----+----+----+----,----+----,
-  ____,PAUS,MSTP,MUTE,MPLY,SLEP,              XXXX,XXXX,XXXX,XXXX,XXXX,____,
+  ____,PAUS,MSTP,MUTE,MPLY,SLEP,              KISS, PND, RUP,SHRG,XXXX,____,
 //----+----,----+----+----+----+----|   |----|----+----+----+----+----+----,
   ____,____,____,____,NUMO,NAVO,FNCO,    XXXX,XXXX,XXXX,____,____,____,____,
 //----+----+----+----+----+----+----|   |----+----+----+----+----+----+----,
@@ -243,6 +261,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                   |----+----+----|   |----+----+----|
 ),
 
+
+
+
+[_STR] = KC_KEYMAP(
+//----+----+----+----+----+----|             |----+----+----+----+----+----,
+  ____,XXXX,XXXX,XXXX,XXXX,XXXX,              LOVE,THUP,THDN,TNGE,XXXX,____,
+//----+----+----+----+----+----|             |----+----+----+----+----+----,
+  ____,XXXX,XXXX,XXXX,XXXX,XXXX,               SAD,SML0,SML1, LOL,XXXX,____,
+//----+----+----+----+----+----|             |----+----+----+----+----+----,
+  ____,XXXX,XXXX,XXXX,XXXX,XXXX,              KISS, PND, RUP,SHRG,XXXX,____,
+//----+----,----+----+----+----+----|   |----|----+----+----+----+----+----,
+  ____,____,____,____,NUMO,NAVO,FNCO,    ASER,LASO, ESC,____,____,____,____,
+//----+----+----+----+----+----+----|   |----+----+----+----+----+----+----,
+                      ____,____,____,    ____,____,____
+//                   |----+----+----|   |----+----+----|
+),
 
 
 [_LASE] = KC_KEYMAP(
@@ -347,6 +381,78 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                }
            return true;
            }
+        case KC_SML0:
+            if (record->event.pressed) {SEND_STRING(":-)"); return true;}
+        case KC_SML1:
+            if (record->event.pressed) {SEND_STRING(":-D"); return true;}
+        case KC_LOL:
+            if (record->event.pressed) {SEND_STRING(">_<"); return true;}
+        case KC_SAD:
+            if (record->event.pressed) {SEND_STRING(":-("); return true;}
+        case KC_LOVE:
+            if (record->event.pressed) {SEND_STRING(":-*"); return true;}
+        case KC_KISS:
+            if (record->event.pressed) {SEND_STRING(":-*"); return true;}
+        case KC_TNGE:
+            if (record->event.pressed) {SEND_STRING(":-P"); return true;}
+        case KC_THUP:
+            if (record->event.pressed) {SEND_STRING("(y)"); return true;}
+        case KC_THDN:
+            if (record->event.pressed) {SEND_STRING("(n)"); return true;}
+        case KC_SHRG:
+            if (record->event.pressed) {SEND_STRING("¯\\_(ツ)_/¯"); return true;}
+        case KC_PND://THE POUND SYMBOL
+            if (record->event.pressed) {
+                register_code(KC_RALT);
+                register_code(KC_P0);unregister_code(KC_P0);
+                register_code(KC_P1);unregister_code(KC_P1);
+                register_code(KC_P6);unregister_code(KC_P6);
+                register_code(KC_P3);unregister_code(KC_P3);
+                unregister_code(KC_RALT);
+                return true;}
+        case KC_RUP://THE INDIAN RUPEE SYMBOL TO-DO
+            if (record->event.pressed) {
+                register_code(KC_RALT);
+                register_code(KC_P8);unregister_code(KC_P8);
+                register_code(KC_P3);unregister_code(KC_P3);
+                register_code(KC_P7);unregister_code(KC_P7);
+                register_code(KC_P7);unregister_code(KC_P7);
+                unregister_code(KC_RALT);
+                return true;
+            }
+        case KC_AESV://PASTE VALUES IN EXCEL
+            if (record->event.pressed) {
+                register_code(KC_LALT);
+                register_code(KC_E);unregister_code(KC_E);
+                unregister_code(KC_LALT);
+                register_code(KC_S);unregister_code(KC_S);
+                register_code(KC_V);unregister_code(KC_V);
+                register_code(KC_ENT);unregister_code(KC_ENT);
+
+                return true;
+            }
+        case KC_WMOV://MOVE WINDOWS
+            if (record->event.pressed) {
+                register_code(KC_LALT);
+                register_code(KC_SPC);unregister_code(KC_SPC);
+                unregister_code(KC_LALT);
+                register_code(KC_M);unregister_code(KC_M);
+                return true;
+            }
+        case KC_WSIZ://RESIZE WINDOWS
+            if (record->event.pressed) {
+                register_code(KC_LALT);
+                register_code(KC_SPC);unregister_code(KC_SPC);
+                unregister_code(KC_LALT);
+                register_code(KC_S);unregister_code(KC_S);
+                return true;
+            }
+        case KC_SNND://END SENTENCE AND BEGIN NEW
+            if (record->event.pressed) {
+                SEND_STRING(". ");
+                //ACTION_MODS_ONESHOT(KC_LSFT);
+                return true;
+            }
         default:
             return true;
     }
