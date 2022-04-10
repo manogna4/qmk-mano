@@ -138,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //----+----+----+----+----+----+----|   |----+----+----+----+----+----+----,
                        F13, DOT, SPC,    XXXX, TAB,NUMT
 //                   |----+----+----|   |----+----+----|
-),
+)
 
 
 [_NAV] = KC_KEYMAP(
